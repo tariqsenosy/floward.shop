@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Floward.Shop.Task.Services.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Floward.Shop.Task.Services.Products", "Floward.Shop.Task.Products\Floward.Shop.Task.Services.Products.csproj", "{5BC9F697-1C73-4E07-9D9C-AB936D2EAC6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Floward.Shop.Task.Services.Card", "Floward.Shop.Task.Card\Floward.Shop.Task.Services.Card.csproj", "{4F866013-244F-4EC4-9EAF-0250C6C9EB3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Floward.Shop.Task.Services.CardService", "Floward.Shop.Task.Card\Floward.Shop.Task.Services.CardService.csproj", "{4F866013-244F-4EC4-9EAF-0250C6C9EB3E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Floward.Shop.Task.Services.Payment", "Floward.Shop.Task.Payment\Floward.Shop.Task.Services.Payment.csproj", "{BE54724E-7A51-4FE9-906D-97830344C16F}"
 EndProject
@@ -28,6 +28,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Floward.Shop.Task.Kernel.Helper", "Floward.Shop.Task.Kernel.Helper\Floward.Shop.Task.Kernel.Helper.csproj", "{B13F23E9-23DE-4E59-85C7-A995DE543622}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Floward.Shop.Task.Services.Notifications", "Floward.Shop.Task.Services.Notifications\Floward.Shop.Task.Services.Notifications.csproj", "{E8B9E423-962A-43B2-B5C8-89C1D88D6A4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5699A6E0-D49C-41BA-BBFF-F83CAF876E1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Floward.Task.Card.Tests", "Floward.Task.Card.Tests\Floward.Task.Card.Tests.csproj", "{D9B4CDDF-4337-43F8-A5D8-F22029022A4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +163,18 @@ Global
 		{E8B9E423-962A-43B2-B5C8-89C1D88D6A4A}.Release|x64.Build.0 = Release|Any CPU
 		{E8B9E423-962A-43B2-B5C8-89C1D88D6A4A}.Release|x86.ActiveCfg = Release|Any CPU
 		{E8B9E423-962A-43B2-B5C8-89C1D88D6A4A}.Release|x86.Build.0 = Release|Any CPU
+		{D9B4CDDF-4337-43F8-A5D8-F22029022A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9B4CDDF-4337-43F8-A5D8-F22029022A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9B4CDDF-4337-43F8-A5D8-F22029022A4F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D9B4CDDF-4337-43F8-A5D8-F22029022A4F}.Debug|x64.Build.0 = Debug|Any CPU
+		{D9B4CDDF-4337-43F8-A5D8-F22029022A4F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D9B4CDDF-4337-43F8-A5D8-F22029022A4F}.Debug|x86.Build.0 = Debug|Any CPU
+		{D9B4CDDF-4337-43F8-A5D8-F22029022A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9B4CDDF-4337-43F8-A5D8-F22029022A4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9B4CDDF-4337-43F8-A5D8-F22029022A4F}.Release|x64.ActiveCfg = Release|Any CPU
+		{D9B4CDDF-4337-43F8-A5D8-F22029022A4F}.Release|x64.Build.0 = Release|Any CPU
+		{D9B4CDDF-4337-43F8-A5D8-F22029022A4F}.Release|x86.ActiveCfg = Release|Any CPU
+		{D9B4CDDF-4337-43F8-A5D8-F22029022A4F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -174,6 +190,7 @@ Global
 		{DE0AF4E5-35E2-41EE-82FD-2B8AB2C118AD} = {1EFAEFDC-6E2E-4D32-A4F1-13C5E6ABD0FE}
 		{B13F23E9-23DE-4E59-85C7-A995DE543622} = {1EFAEFDC-6E2E-4D32-A4F1-13C5E6ABD0FE}
 		{E8B9E423-962A-43B2-B5C8-89C1D88D6A4A} = {42046624-A16E-4EFF-A7C0-BB6243FBEE3B}
+		{D9B4CDDF-4337-43F8-A5D8-F22029022A4F} = {5699A6E0-D49C-41BA-BBFF-F83CAF876E1F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {24E1BC98-9CEE-4FBC-B7D4-05BC62528FE1}

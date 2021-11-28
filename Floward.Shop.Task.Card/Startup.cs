@@ -1,3 +1,6 @@
+
+using Floward.Shop.Task.Services.CardService.Domain.Repositories.Implementation;
+using Floward.Shop.Task.Services.CardService.Domain.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +28,8 @@ namespace Floward.Shop.Task.Card
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+          
+            services.AddTransient<ICardRepository, CardRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
