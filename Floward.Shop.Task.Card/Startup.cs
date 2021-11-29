@@ -1,6 +1,9 @@
 
+using Floward.Shop.Task.Services.CardService.Domain.RabbitMQ;
 using Floward.Shop.Task.Services.CardService.Domain.Repositories.Implementation;
 using Floward.Shop.Task.Services.CardService.Domain.Repositories.Interfaces;
+using GreenPipes;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +30,19 @@ namespace Floward.Shop.Task.Card
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMassTransit(x =>
+            {
+                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(config =>
+                {
+                    config.Host(new Uri(RabbitMqConsts.RabbitMqRootUri), h =>
+                    {
+                        h.Username(RabbitMqConsts.UserName);
+                        h.Password(RabbitMqConsts.Password);
+                    });
+                  
+                }));
+            });
+
             services.AddControllers();
           
             services.AddTransient<ICardRepository, CardRepository>();

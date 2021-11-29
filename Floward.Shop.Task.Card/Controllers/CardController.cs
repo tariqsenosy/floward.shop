@@ -1,6 +1,10 @@
 ﻿using Floward.Shop.Task.Services.CardService.Domain.Entites;
+using Floward.Shop.Task.Services.CardService.Domain.Events;
+using Floward.Shop.Task.Services.CardService.Domain.RabbitMQ;
 using Floward.Shop.Task.Services.CardService.Domain.Repositories.Interfaces;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace Floward.Shop.Task.Services.CardService.Controllers
@@ -10,8 +14,10 @@ namespace Floward.Shop.Task.Services.CardService.Controllers
     public class CardController : Controller
     {
         private readonly ICardRepository _repository;
-        public CardController(ICardRepository repository) {
+        private readonly IBus _bus;
+        public CardController(ICardRepository repository, IBus bus) {
             _repository = repository;
+            _bus = bus;
         }
 
         [HttpGet]
@@ -36,6 +42,24 @@ namespace Floward.Shop.Task.Services.CardService.Controllers
             return Ok(await _repository.DeleteCart(userName));
         }
 
-      
+
+        //Service as a publisher for RabbitMQ 
+        [HttpPost]
+        [Route("checkout")]
+        public async Task<ActionResult> Checkout()
+        {
+            Uri uri = new Uri(RabbitMqConsts.RabbitMqUri);
+            var endPoint = await _bus.GetSendEndpoint(uri);
+            CheckoutEvent _event=new CheckoutEvent();
+            _event.Description = "Chckout From Card ";
+            _event.Id = new Guid().ToString();
+            _event.IsCompleted = false;
+            
+            await endPoint.Send(_event);
+            return Ok();
+        }
+
+
+
     }
 }
